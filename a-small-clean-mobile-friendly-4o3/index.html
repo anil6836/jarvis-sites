@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f0">
+  <meta name="description" content="తెలుగు మాటలు, కథలు, ఆలోచనల కోసం ఒక చిన్న ఆప్యాయమైన వేదిక.">
+  <title>మన మాట — తెలుగు మనసుల వేదిక</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18342e;
+      --muted: #66766f;
+      --green: #176b55;
+      --green-dark: #10513f;
+      --lime: #d9e8b0;
+      --paper: #f7f6f0;
+      --white: #fffefa;
+      --line: #e6e8df;
+      --shadow: 0 22px 60px rgba(31, 59, 48, .09);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans Telugu", "Gautami", "Lohit Telugu", system-ui, sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1100px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header { padding: 22px 0; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.08rem;
+      font-weight: 750;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--green);
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .nav-cta {
+      padding: 9px 16px;
+      border: 1px solid #cbd8ce;
+      border-radius: 999px;
+      color: var(--green) !important;
+      font-weight: 650;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 48px;
+      min-height: 500px;
+      padding: 58px 0 74px;
+      overflow: hidden;
+    }
+
+    .hero-copy { position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 23px;
+      height: 2px;
+      background: #91ad69;
+      border-radius: 3px;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
+      line-height: 1.2;
+      letter-spacing: -.055em;
+      font-weight: 800;
+    }
+
+    h1 span { color: var(--green); }
+
+    .hero-copy > p:not(.eyebrow) {
+      max-width: 530px;
+      margin: 22px 0 28px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 11px 20px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font: inherit;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(23, 107, 85, .18);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--green-dark);
+    }
+
+    .button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #98b96e;
+      outline-offset: 3px;
+    }
+
+    .hero-art {
+      position: relative;
+      display: grid;
+      min-height: 340px;
+      place-items: center;
+    }
+
+    .sun {
+      position: absolute;
+      top: 10px;
+      right: 22px;
+      width: 215px;
+      height: 215px;
+      border-radius: 50%;
+      background: #e9edcf;
+    }
+
+    .art-card {
+      position: relative;
+      width: min(100%, 355px);
+      min-height: 285px;
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 28px;
+      background: rgba(255, 254, 250, .88);
+      box-shadow: var(--shadow);
+      transform: rotate(-2deg);
+    }
+
+    .art-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #89958b;
+      font-size: .78rem;
+    }
+
+    .art-dots { display: flex; gap: 5px; }
+    .art-dots i { width: 6px; height: 6px; border-radius: 50%; background: #d1d7c8; }
+
+    .quote-mark {
+      margin: 25px 0 2px;
+      color: #a4bb7b;
+      font-family: Georgia, serif;
+      font-size: 4.3rem;
+      line-height: .8;
+    }
+
+    .art-card blockquote {
+      margin: 10px 0 20px;
+      color: var(--ink);
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .art-line {
+      width: 72%;
+      height: 7px;
+      margin-top: 10px;
+      border-radius: 10px;
+      background: #edf0e8;
+    }
+
+    .art-line.short { width: 49%; }
+
+    .leaf {
+      position: absolute;
+      right: -8px;
+      bottom: 7px;
+      display: grid;
+      width: 70px;
+      height: 70px;
+      place-items: center;
+      border: 8px solid var(--paper);
+      border-radius: 50%;
+      background: var(--lime);
+      font-size: 1.55rem;
+      transform: rotate(12deg);
+    }
+
+    .section {
+      padding: 68px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      max-width: 640px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading .eyebrow { margin-bottom: 10px; }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.85rem, 4vw, 2.75rem);
+      line-height: 1.35;
+      letter-spacing: -.04em;
+    }
+
+    .section-heading > p:last-child {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .about-card, .note-card {
+      padding: 28px;
+      border-radius: 22px;
+    }
+
+    .about-card {
+      background: var(--white);
+      box-shadow: 0 10px 35px rgba(31, 59, 48, .045);
+    }
+
+    .about-card p {
+      margin: 0;
+      color: #52645c;
+      font-size: 1.05rem;
+    }
+
+    .note-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #eaf0df;
+    }
+
+    .note-card span { font-size: 1.5rem; }
+    .note-card p { margin: 12px 0 0; font-weight: 700; }
+
+    .contact-section { padding-bottom: 76px; }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 42px;
+      padding: clamp(25px, 5vw, 48px);
+      border-radius: 28px;
+      background: #eaf0df;
+    }
+
+    .contact-intro p {
+      margin: 14px 0 0;
+      color: #5f6f62;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field { display: grid; gap: 6px; }
+
+    label {
+      color: #334b3d;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d5dfcf;
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--ink);
+      font: inherit;
+      font-size: .95rem;
+    }
+
+    textarea { min-height: 112px; resize: vertical; }
+
+    input::placeholder, textarea::placeholder { color: #9aa59b; }
+
+    .form-footnote {
+      margin: -2px 0 0;
+      color: #6d796e;
+      font-size: .79rem;
+    }
+
+    .contact-form .button { justify-self: start; margin-top: 2px; }
+
+    .status {
+      min-height: 1.5em;
+      margin: 0;
+      color: var(--green-dark);
+      font-size: .9rem;
+    }
+
+    footer {
+      padding: 22px 0 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .site-header { padding: 16px 0; }
+      .nav-links { gap: 14px; font-size: .84rem; }
+      .nav-cta { padding: 7px 12px; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        min-height: auto;
+        padding: 48px 0 55px;
+      }
+      .hero-copy > p:not(.eyebrow) { font-size: 1rem; }
+      .hero-art { min-height: 300px; }
+      .sun { right: 8%; width: 190px; height: 190px; }
+      .art-card { width: min(88%, 350px); }
+      .section { padding: 54px 0; }
+      .about-grid, .contact-panel { grid-template-columns: 1fr; }
+      .contact-panel { gap: 26px; }
+      .contact-section { padding-bottom: 58px; }
+    }
+
+    @media (max-width: 430px) {
+      .nav-links { gap: 11px; }
+      .nav-links a { font-size: .8rem; }
+      .brand { font-size: 1rem; }
+      .brand-mark { width: 34px; height: 34px; }
+      .nav-cta { padding: 6px 10px; }
+      .hero-art { min-height: 275px; }
+      .art-card { min-height: 260px; padding: 22px; }
+      .art-card blockquote { font-size: 1.25rem; }
+      .about-card, .note-card { padding: 23px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="మన మాట — మొదటి పేజీ">
+        <span class="brand-mark" aria-hidden="true">మ</span>
+        <span>మన మాట</span>
+      </a>
+      <nav class="nav-links" aria-label="ప్రధాన నావిగేషన్">
+        <a href="#about">మా గురించి</a>
+        <a class="nav-cta" href="#contact">మాట్లాడుదాం <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home" aria-labelledby="welcome-title">
+      <div class="hero-copy">
+        <p class="eyebrow">మన భాష · మన భావం</p>
+        <h1 id="welcome-title">తెలుగు మనసులకు<br><span>ఆప్యాయ స్వాగతం.</span></h1>
+        <p>మంచి మాటలు, మన కథలు, కొత్త ఆలోచనలు — మనందరం కలిసి పంచుకునే చిన్న వేదిక ఇది.</p>
+        <a class="button" href="#about">మా గురించి తెలుసుకోండి <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="తెలుగు మాటలతో అలంకరించిన కార్డు" role="img">
+        <div class="sun" aria-hidden="true"></div>
+        <div class="art-card">
+          <div class="art-top">
+            <span>ఈ రోజు ఒక మంచి మాట</span>
+            <span class="art-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <blockquote>మాట పంచితే<br>మనసు దగ్గరవుతుంది.</blockquote>
+          <div class="art-line" aria-hidden="true"></div>
+          <div class="art-line short" aria-hidden="true"></div>
+        </div>
+        <div class="leaf" aria-hidden="true">✿</div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">మా గురించి</p>
+          <h2 id="about-title">మన మాటల్లోనే మన అనుబంధం.</h2>
+          <p>తెలుగు అందాన్ని రోజువారీ జీవితంలో మరింత దగ్గర చేయాలన్న చిన్న ప్రయత్నం.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <p>మన మాట అనేది తెలుగు భాషలో కథలు, ఆలోచనలు, ఉపయోగకరమైన విషయాలను ఆప్యాయంగా పంచుకునే వేదిక. మన చుట్టూ ఉన్న మంచి విషయాలను సరళంగా అందరికీ చేరవేయడం, తెలుగు సంభాషణకు మరింత చోటివ్వడం మా ఉద్దేశం. చదవండి, పంచుకోండి, మీ మాట కూడా జోడించండి.</p>
+          </div>
+          <aside class="note-card">
+            <span aria-hidden="true">🌱</span>
+            <p>చిన్న మాటైనా సరే — మనసుతో పంచుకుంటే చాలు.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="contact-intro">
+            <p class="eyebrow">సంప్రదించండి</p>
+            <h2 id="contact-title">మీ మాట కోసం ఎదురుచూస్తున్నాం.</h2>
+            <p>మీ ఆలోచన, సూచన లేదా ప్రశ్నను మాతో పంచుకోండి. మీ నుంచి వచ్చే ప్రతి సందేశం మాకు విలువైనదే.</p>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="field">
+              <label for="name">మీ పేరు</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="మీ పేరు" required>
+            </div>
+            <div class="field">
+              <label for="email">మీ ఇమెయిల్</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="మీకు సమాధానం పంపడానికి" required>
+            </div>
+            <div class="field">
+              <label for="message">మీ సందేశం</label>
+              <textarea id="message" name="message" placeholder="ఏం చెప్పాలనుకుంటున్నారు?" required></textarea>
+            </div>
+            <p class="form-footnote">పంపినప్పుడు మీ పరికరంలోని ఇమెయిల్ యాప్‌లో సందేశం సిద్ధమవుతుంది.</p>
+            <button class="button" type="submit">సందేశం పంపండి <span aria-hidden="true">↗</span></button>
+            <p class="status" id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">మ</span><span>మన మాట</span></a>
+      <p>తెలుగు మనసులతో, మనస్ఫూర్తిగా. <span aria-hidden="true">♥</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!this.reportValidity()) return;
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const subject = encodeURIComponent("మన మాటకు సందేశం — " + name);
+      const body = encodeURIComponent(
+        "పేరు: " + name + "\nఇమెయిల్: " + email + "\n\nసందేశం:\n" + message
+      );
+
+      document.getElementById("form-status").textContent =
+        "మీ ఇమెయిల్ యాప్‌లో సందేశం తెరుచుకుంటుంది.";
+      window.location.href = "mailto:hello@example.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>
