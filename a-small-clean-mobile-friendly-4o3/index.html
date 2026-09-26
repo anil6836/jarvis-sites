@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f6f0">
-  <meta name="description" content="తెలుగు మాటలు, కథలు, ఆలోచనల కోసం ఒక చిన్న ఆప్యాయమైన వేదిక.">
-  <title>మన మాట — తెలుగు మనసుల వేదిక</title>
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Everyday essentials, thoughtfully made. Explore men's underwear, loungewear and basics from Jockey's.">
+  <title>Jockey's — Made for Every Day</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #18342e;
-      --muted: #66766f;
-      --green: #176b55;
-      --green-dark: #10513f;
-      --lime: #d9e8b0;
-      --paper: #f7f6f0;
+      --ink: #20251f;
+      --muted: #71766e;
+      --green: #244b3d;
+      --green-dark: #18392e;
+      --orange: #d8663b;
+      --paper: #f7f5ef;
       --white: #fffefa;
-      --line: #e6e8df;
-      --shadow: 0 22px 60px rgba(31, 59, 48, .09);
+      --line: #e6e4dc;
+      --shadow: 0 18px 48px rgba(32, 37, 31, .09);
     }
 
     * { box-sizing: border-box; }
@@ -28,25 +28,25 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: "Noto Sans Telugu", "Gautami", "Lohit Telugu", system-ui, sans-serif;
-      line-height: 1.75;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     a { color: inherit; }
 
     .wrap {
-      width: min(1100px, calc(100% - 40px));
+      width: min(1160px, calc(100% - 44px));
       margin-inline: auto;
     }
 
-    .site-header { padding: 22px 0; }
+    .site-header { padding: 20px 0; }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 22px;
     }
 
     .brand {
@@ -56,27 +56,30 @@
       color: var(--ink);
       text-decoration: none;
       font-size: 1.08rem;
-      font-weight: 750;
-      letter-spacing: -.02em;
+      font-weight: 850;
+      letter-spacing: -.055em;
     }
 
     .brand-mark {
       display: grid;
-      width: 38px;
-      height: 38px;
+      width: 39px;
+      height: 39px;
       place-items: center;
-      border-radius: 13px;
-      background: var(--green);
+      border-radius: 50%;
+      background: var(--orange);
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: -.08em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
-      color: var(--muted);
-      font-size: .92rem;
+      gap: 30px;
+      color: #62675f;
+      font-size: .9rem;
+      font-weight: 600;
     }
 
     .nav-links a {
@@ -84,82 +87,93 @@
       transition: color .2s ease;
     }
 
-    .nav-links a:hover { color: var(--green); }
+    .nav-links a:hover { color: var(--orange); }
 
     .nav-cta {
-      padding: 9px 16px;
-      border: 1px solid #cbd8ce;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      border: 1px solid #d6d4cc;
       border-radius: 999px;
-      color: var(--green) !important;
-      font-weight: 650;
+      color: var(--ink) !important;
+    }
+
+    .bag-count {
+      display: grid;
+      width: 20px;
+      height: 20px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-size: .68rem;
     }
 
     .hero {
-      position: relative;
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 48px;
-      min-height: 500px;
-      padding: 58px 0 74px;
-      overflow: hidden;
+      padding: 32px 0 76px;
     }
 
-    .hero-copy { position: relative; z-index: 1; }
+    .hero-copy { padding: 25px 0; }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 9px;
       margin: 0 0 18px;
-      color: var(--green);
-      font-size: .86rem;
-      font-weight: 700;
+      color: var(--orange);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 23px;
+      width: 22px;
       height: 2px;
-      background: #91ad69;
-      border-radius: 3px;
+      border-radius: 2px;
+      background: currentColor;
     }
 
     h1 {
-      max-width: 650px;
+      max-width: 570px;
       margin: 0;
-      font-size: clamp(2.5rem, 6vw, 4.75rem);
-      line-height: 1.2;
-      letter-spacing: -.055em;
-      font-weight: 800;
+      font-size: clamp(3.1rem, 6.8vw, 6rem);
+      line-height: .99;
+      letter-spacing: -.075em;
+      font-weight: 850;
     }
 
     h1 span { color: var(--green); }
 
     .hero-copy > p:not(.eyebrow) {
-      max-width: 530px;
-      margin: 22px 0 28px;
+      max-width: 440px;
+      margin: 24px 0 28px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 11px 20px;
+      gap: 10px;
+      min-height: 49px;
+      padding: 12px 20px;
       border: 0;
       border-radius: 999px;
       background: var(--green);
       color: white;
       text-decoration: none;
       font: inherit;
-      font-size: .95rem;
-      font-weight: 700;
+      font-size: .9rem;
+      font-weight: 750;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(23, 107, 85, .18);
       transition: transform .2s ease, background .2s ease;
     }
 
@@ -168,214 +182,350 @@
       background: var(--green-dark);
     }
 
-    .button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
-      outline: 3px solid #98b96e;
+    .button .arrow { font-size: 1.15rem; line-height: 1; }
+
+    .button:focus-visible, a:focus-visible, input:focus-visible,
+    textarea:focus-visible, select:focus-visible {
+      outline: 3px solid #df9a78;
       outline-offset: 3px;
     }
 
-    .hero-art {
+    .hero-visual {
       position: relative;
       display: grid;
-      min-height: 340px;
+      min-height: 435px;
       place-items: center;
+      overflow: hidden;
+      border-radius: 30px;
+      background: #e9e8db;
     }
 
-    .sun {
+    .hero-sun {
       position: absolute;
-      top: 10px;
+      top: 31px;
+      right: 42px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #d9dfbd;
+    }
+
+    .hero-stamp {
+      position: absolute;
+      z-index: 2;
+      top: 24px;
+      left: 24px;
+      display: grid;
+      width: 66px;
+      height: 66px;
+      place-items: center;
+      border: 1px solid rgba(36, 75, 61, .28);
+      border-radius: 50%;
+      color: var(--green);
+      font-size: .65rem;
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+      text-transform: uppercase;
+      transform: rotate(-12deg);
+    }
+
+    .hero-shirt {
+      position: relative;
+      z-index: 1;
+      width: min(75%, 360px);
+      filter: drop-shadow(12px 22px 16px rgba(24, 39, 31, .17));
+      transform: rotate(-7deg) translateY(13px);
+    }
+
+    .visual-caption {
+      position: absolute;
       right: 22px;
-      width: 215px;
-      height: 215px;
-      border-radius: 50%;
-      background: #e9edcf;
-    }
-
-    .art-card {
-      position: relative;
-      width: min(100%, 355px);
-      min-height: 285px;
-      padding: 26px;
-      border: 1px solid rgba(255,255,255,.8);
-      border-radius: 28px;
-      background: rgba(255, 254, 250, .88);
-      box-shadow: var(--shadow);
-      transform: rotate(-2deg);
-    }
-
-    .art-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #89958b;
-      font-size: .78rem;
-    }
-
-    .art-dots { display: flex; gap: 5px; }
-    .art-dots i { width: 6px; height: 6px; border-radius: 50%; background: #d1d7c8; }
-
-    .quote-mark {
-      margin: 25px 0 2px;
-      color: #a4bb7b;
-      font-family: Georgia, serif;
-      font-size: 4.3rem;
-      line-height: .8;
-    }
-
-    .art-card blockquote {
-      margin: 10px 0 20px;
-      color: var(--ink);
-      font-size: 1.45rem;
-      font-weight: 700;
-      line-height: 1.65;
-    }
-
-    .art-line {
-      width: 72%;
-      height: 7px;
-      margin-top: 10px;
-      border-radius: 10px;
-      background: #edf0e8;
-    }
-
-    .art-line.short { width: 49%; }
-
-    .leaf {
-      position: absolute;
-      right: -8px;
-      bottom: 7px;
-      display: grid;
-      width: 70px;
-      height: 70px;
-      place-items: center;
-      border: 8px solid var(--paper);
-      border-radius: 50%;
-      background: var(--lime);
-      font-size: 1.55rem;
-      transform: rotate(12deg);
+      bottom: 20px;
+      z-index: 2;
+      padding: 8px 13px;
+      border-radius: 99px;
+      background: rgba(255, 254, 250, .8);
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .04em;
     }
 
     .section {
-      padding: 68px 0;
+      padding: 70px 0;
       border-top: 1px solid var(--line);
     }
 
     .section-heading {
-      max-width: 640px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
       margin-bottom: 30px;
     }
+
+    .section-heading-copy { max-width: 640px; }
 
     .section-heading .eyebrow { margin-bottom: 10px; }
 
     h2 {
       margin: 0;
-      font-size: clamp(1.85rem, 4vw, 2.75rem);
-      line-height: 1.35;
-      letter-spacing: -.04em;
+      font-size: clamp(2rem, 4.4vw, 3.2rem);
+      line-height: 1.12;
+      letter-spacing: -.06em;
     }
 
-    .section-heading > p:last-child {
-      margin: 14px 0 0;
+    .section-heading p:last-child {
+      margin: 12px 0 0;
       color: var(--muted);
-      font-size: 1rem;
     }
 
-    .about-grid {
+    .text-link {
+      flex: 0 0 auto;
+      padding-bottom: 4px;
+      color: var(--green);
+      font-size: .9rem;
+      font-weight: 750;
+      text-decoration: none;
+      border-bottom: 1px solid #9aafa3;
+    }
+
+    .product-grid {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: stretch;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .about-card, .note-card {
-      padding: 28px;
-      border-radius: 22px;
-    }
-
-    .about-card {
+    .product-card {
+      overflow: hidden;
+      border: 1px solid #ebe9e1;
+      border-radius: 20px;
       background: var(--white);
-      box-shadow: 0 10px 35px rgba(31, 59, 48, .045);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
-    .about-card p {
-      margin: 0;
-      color: #52645c;
-      font-size: 1.05rem;
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
     }
 
-    .note-card {
+    .product-art {
+      position: relative;
+      display: grid;
+      min-height: 280px;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .product-art.tee-bg { background: #e9e7dc; }
+    .product-art.trunk-bg { background: #e3e9e3; }
+    .product-art.short-bg { background: #eee4db; }
+
+    .product-art svg {
+      width: 61%;
+      max-height: 225px;
+      filter: drop-shadow(8px 13px 10px rgba(32, 37, 31, .14));
+      transition: transform .3s ease;
+    }
+
+    .product-card:hover .product-art svg { transform: translateY(-4px) rotate(-2deg); }
+
+    .product-tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 6px 10px;
+      border-radius: 99px;
+      background: rgba(255, 254, 250, .85);
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .product-info { padding: 18px 18px 20px; }
+
+    .product-title-row {
       display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .product-title-row h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      letter-spacing: -.025em;
+    }
+
+    .price {
+      color: var(--green);
+      font-size: .95rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .product-info p {
+      margin: 6px 0 15px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .add-button {
+      width: 100%;
+      min-height: 41px;
+      border: 1px solid #d8ded8;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--green);
+      font: inherit;
+      font-size: .82rem;
+      font-weight: 750;
+      cursor: pointer;
+      transition: color .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .add-button:hover {
+      border-color: var(--green);
+      background: var(--green);
+      color: white;
+    }
+
+    .story-section { padding: 20px 0 74px; }
+
+    .story-panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 42px;
+      min-height: 330px;
+      padding: clamp(28px, 5vw, 56px);
+      overflow: hidden;
+      border-radius: 26px;
+      background: var(--green);
+      color: white;
+    }
+
+    .story-panel::after {
+      content: "";
+      position: absolute;
+      right: -95px;
+      bottom: -190px;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      box-shadow: 0 0 0 38px rgba(255,255,255,.035), 0 0 0 78px rgba(255,255,255,.03);
+    }
+
+    .story-copy { position: relative; z-index: 1; }
+    .story-copy .eyebrow { color: #d4dfb4; }
+
+    .story-copy h2 {
+      max-width: 500px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .story-copy > p:not(.eyebrow) {
+      max-width: 470px;
+      margin: 17px 0 23px;
+      color: rgba(255,255,255,.76);
+    }
+
+    .story-panel .button {
+      background: #f0e8d9;
+      color: var(--green);
+    }
+
+    .story-panel .button:hover { background: white; }
+
+    .story-quote {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: 205px;
       flex-direction: column;
       justify-content: center;
-      background: #eaf0df;
+      padding: 25px 30px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      background: rgba(255,255,255,.07);
+      transform: rotate(2deg);
     }
 
-    .note-card span { font-size: 1.5rem; }
-    .note-card p { margin: 12px 0 0; font-weight: 700; }
+    .story-quote span {
+      color: #d4dfb4;
+      font-family: Georgia, serif;
+      font-size: 4rem;
+      line-height: .8;
+    }
 
-    .contact-section { padding-bottom: 76px; }
+    .story-quote p {
+      margin: 12px 0 0;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -.03em;
+    }
+
+    .contact-section { padding: 0 0 74px; }
 
     .contact-panel {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 42px;
-      padding: clamp(25px, 5vw, 48px);
-      border-radius: 28px;
-      background: #eaf0df;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 45px;
+      padding: clamp(26px, 5vw, 50px);
+      border-radius: 26px;
+      background: #eeece3;
     }
 
-    .contact-intro p {
-      margin: 14px 0 0;
-      color: #5f6f62;
+    .contact-intro .eyebrow { margin-bottom: 12px; }
+
+    .contact-intro > p:last-child {
+      max-width: 390px;
+      margin: 15px 0 0;
+      color: var(--muted);
     }
 
-    .contact-form {
-      display: grid;
-      gap: 14px;
-    }
-
+    .contact-form { display: grid; gap: 13px; }
     .field { display: grid; gap: 6px; }
 
     label {
-      color: #334b3d;
-      font-size: .9rem;
-      font-weight: 700;
+      color: #3f4941;
+      font-size: .83rem;
+      font-weight: 750;
     }
 
     input, textarea {
       width: 100%;
       padding: 12px 14px;
-      border: 1px solid #d5dfcf;
-      border-radius: 12px;
+      border: 1px solid #d9d8d0;
+      border-radius: 11px;
       background: var(--white);
       color: var(--ink);
       font: inherit;
-      font-size: .95rem;
+      font-size: .9rem;
     }
 
-    textarea { min-height: 112px; resize: vertical; }
-
-    input::placeholder, textarea::placeholder { color: #9aa59b; }
-
-    .form-footnote {
-      margin: -2px 0 0;
-      color: #6d796e;
-      font-size: .79rem;
-    }
-
-    .contact-form .button { justify-self: start; margin-top: 2px; }
+    textarea { min-height: 105px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #9b9d95; }
+    .contact-form .button { justify-self: start; margin-top: 3px; }
 
     .status {
       min-height: 1.5em;
       margin: 0;
-      color: var(--green-dark);
-      font-size: .9rem;
+      color: var(--green);
+      font-size: .85rem;
     }
 
     footer {
       padding: 22px 0 28px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: .86rem;
+      font-size: .83rem;
     }
 
     .footer-inner {
@@ -386,38 +536,54 @@
     }
 
     footer p { margin: 0; }
+    footer .brand { color: var(--ink); }
 
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 36px, 560px); }
-      .site-header { padding: 16px 0; }
-      .nav-links { gap: 14px; font-size: .84rem; }
-      .nav-cta { padding: 7px 12px; }
+    @media (max-width: 780px) {
+      .wrap { width: min(100% - 36px, 600px); }
+      .site-header { padding: 15px 0; }
+      .nav-links { gap: 16px; font-size: .82rem; }
       .hero {
         grid-template-columns: 1fr;
-        gap: 12px;
-        min-height: auto;
-        padding: 48px 0 55px;
+        gap: 18px;
+        padding: 35px 0 55px;
       }
-      .hero-copy > p:not(.eyebrow) { font-size: 1rem; }
-      .hero-art { min-height: 300px; }
-      .sun { right: 8%; width: 190px; height: 190px; }
-      .art-card { width: min(88%, 350px); }
-      .section { padding: 54px 0; }
-      .about-grid, .contact-panel { grid-template-columns: 1fr; }
-      .contact-panel { gap: 26px; }
-      .contact-section { padding-bottom: 58px; }
+      .hero-copy { padding: 18px 0 0; }
+      .hero-visual { min-height: 390px; }
+      .section { padding: 55px 0; }
+      .product-grid { gap: 14px; }
+      .product-art { min-height: 230px; }
+      .product-art svg { width: 65%; }
+      .story-section { padding: 0 0 55px; }
+      .story-panel { grid-template-columns: 1fr; gap: 25px; }
+      .story-quote { min-height: 160px; }
+      .contact-panel { grid-template-columns: 1fr; gap: 25px; }
+      .contact-section { padding-bottom: 55px; }
     }
 
-    @media (max-width: 430px) {
-      .nav-links { gap: 11px; }
-      .nav-links a { font-size: .8rem; }
+    @media (max-width: 540px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: .77rem; }
       .brand { font-size: 1rem; }
-      .brand-mark { width: 34px; height: 34px; }
-      .nav-cta { padding: 6px 10px; }
-      .hero-art { min-height: 275px; }
-      .art-card { min-height: 260px; padding: 22px; }
-      .art-card blockquote { font-size: 1.25rem; }
-      .about-card, .note-card { padding: 23px; }
+      .brand-mark { width: 35px; height: 35px; }
+      .nav-cta { padding: 7px 10px; }
+      .nav-cta .bag-label { display: none; }
+      .hero { padding-top: 26px; }
+      h1 { font-size: clamp(3rem, 14vw, 4.4rem); }
+      .hero-visual { min-height: 330px; border-radius: 23px; }
+      .hero-sun { width: 145px; height: 145px; right: 22px; }
+      .hero-stamp { width: 56px; height: 56px; top: 16px; left: 16px; font-size: .57rem; }
+      .hero-shirt { width: 72%; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .product-grid { grid-template-columns: 1fr; gap: 16px; }
+      .product-card { display: grid; grid-template-columns: 42% 1fr; }
+      .product-art { min-height: 205px; }
+      .product-art svg { width: 78%; }
+      .product-info { display: flex; flex-direction: column; justify-content: center; padding: 15px; }
+      .product-title-row { flex-direction: column; gap: 2px; }
+      .product-info p { margin: 5px 0 11px; font-size: .8rem; }
+      .add-button { min-height: 37px; font-size: .76rem; }
+      .story-panel { padding: 27px 23px; border-radius: 22px; }
+      .contact-panel { padding: 25px 20px; border-radius: 22px; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
 
@@ -432,13 +598,18 @@
 <body>
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="మన మాట — మొదటి పేజీ">
-        <span class="brand-mark" aria-hidden="true">మ</span>
-        <span>మన మాట</span>
+      <a class="brand" href="#home" aria-label="Jockey's home">
+        <span class="brand-mark" aria-hidden="true">J's</span>
+        <span>Jockey's</span>
       </a>
-      <nav class="nav-links" aria-label="ప్రధాన నావిగేషన్">
-        <a href="#about">మా గురించి</a>
-        <a class="nav-cta" href="#contact">మాట్లాడుదాం <span aria-hidden="true">↗</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#shop">Shop</a>
+        <a href="#story">Our story</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#shop" aria-label="Shopping bag, 0 items">
+          <span class="bag-label">Your bag</span>
+          <span class="bag-count" id="bag-count" aria-live="polite">0</span>
+        </a>
       </nav>
     </div>
   </header>
@@ -446,69 +617,141 @@
   <main>
     <section class="wrap hero" id="home" aria-labelledby="welcome-title">
       <div class="hero-copy">
-        <p class="eyebrow">మన భాష · మన భావం</p>
-        <h1 id="welcome-title">తెలుగు మనసులకు<br><span>ఆప్యాయ స్వాగతం.</span></h1>
-        <p>మంచి మాటలు, మన కథలు, కొత్త ఆలోచనలు — మనందరం కలిసి పంచుకునే చిన్న వేదిక ఇది.</p>
-        <a class="button" href="#about">మా గురించి తెలుసుకోండి <span aria-hidden="true">↓</span></a>
+        <p class="eyebrow">Everyday, made better</p>
+        <h1 id="welcome-title">Comfort that<br><span>moves with you.</span></h1>
+        <p>From the first coffee to the last call, find easy-wearing essentials made for real life and all the moments in between.</p>
+        <a class="button" href="#shop">Explore the collection <span class="arrow" aria-hidden="true">↘</span></a>
       </div>
-      <div class="hero-art" aria-label="తెలుగు మాటలతో అలంకరించిన కార్డు" role="img">
-        <div class="sun" aria-hidden="true"></div>
-        <div class="art-card">
-          <div class="art-top">
-            <span>ఈ రోజు ఒక మంచి మాట</span>
-            <span class="art-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          </div>
-          <div class="quote-mark" aria-hidden="true">“</div>
-          <blockquote>మాట పంచితే<br>మనసు దగ్గరవుతుంది.</blockquote>
-          <div class="art-line" aria-hidden="true"></div>
-          <div class="art-line short" aria-hidden="true"></div>
-        </div>
-        <div class="leaf" aria-hidden="true">✿</div>
+
+      <div class="hero-visual" role="img" aria-label="Illustration of a deep green men's everyday T-shirt">
+        <div class="hero-sun" aria-hidden="true"></div>
+        <div class="hero-stamp" aria-hidden="true">Soft<br>by nature</div>
+        <svg class="hero-shirt" viewBox="0 0 360 360" aria-hidden="true">
+          <path d="M112 57 153 42c7 21 18 32 32 32s25-11 32-32l41 15 61 45-34 52-36-23v163H90V131l-36 23-34-52 61-45 31 0Z" fill="#315b49"/>
+          <path d="M153 42c6 17 17 28 32 28s26-11 32-28" fill="none" stroke="#244638" stroke-width="8" stroke-linecap="round"/>
+          <path d="M101 145v132m158-132v132" stroke="#47715d" stroke-width="2" opacity=".55"/>
+          <path d="M121 76 90 97m138-21 31 21" stroke="#47715d" stroke-width="2" opacity=".5"/>
+          <text x="180" y="203" fill="#e7eadb" font-family="system-ui,sans-serif" font-size="19" font-weight="800" letter-spacing="1" text-anchor="middle">JOCKEY'S</text>
+        </svg>
+        <div class="visual-caption">The everyday tee · in forest</div>
       </div>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
+    <section class="section" id="shop" aria-labelledby="shop-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="eyebrow">మా గురించి</p>
-          <h2 id="about-title">మన మాటల్లోనే మన అనుబంధం.</h2>
-          <p>తెలుగు అందాన్ని రోజువారీ జీవితంలో మరింత దగ్గర చేయాలన్న చిన్న ప్రయత్నం.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-card">
-            <p>మన మాట అనేది తెలుగు భాషలో కథలు, ఆలోచనలు, ఉపయోగకరమైన విషయాలను ఆప్యాయంగా పంచుకునే వేదిక. మన చుట్టూ ఉన్న మంచి విషయాలను సరళంగా అందరికీ చేరవేయడం, తెలుగు సంభాషణకు మరింత చోటివ్వడం మా ఉద్దేశం. చదవండి, పంచుకోండి, మీ మాట కూడా జోడించండి.</p>
+          <div class="section-heading-copy">
+            <p class="eyebrow">The daily lineup</p>
+            <h2 id="shop-title">Good basics. Great days.</h2>
+            <p>Comfort-first favorites, ready to become your new go-tos.</p>
           </div>
-          <aside class="note-card">
-            <span aria-hidden="true">🌱</span>
-            <p>చిన్న మాటైనా సరే — మనసుతో పంచుకుంటే చాలు.</p>
-          </aside>
+          <a class="text-link" href="#shop">Explore all essentials <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-art tee-bg">
+              <span class="product-tag">Bestseller</span>
+              <svg viewBox="0 0 220 230" aria-label="Green crewneck T-shirt illustration" role="img">
+                <path d="m71 31 25-10c3 13 8 20 14 20s11-7 14-20l25 10 39 29-22 34-23-15v117H77V79L54 94 32 60l39-29Z" fill="#3e6957"/>
+                <path d="M96 21c3 12 8 18 14 18s11-6 14-18" fill="none" stroke="#315544" stroke-width="5" stroke-linecap="round"/>
+                <path d="M84 91v85m52-85v85" stroke="#6d8a78" stroke-width="1.5" opacity=".5"/>
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-title-row">
+                <h3>Everyday Crew Tee</h3>
+                <span class="price">$28</span>
+              </div>
+              <p>Soft cotton · Forest green</p>
+              <button class="add-button" type="button" data-product="Everyday Crew Tee">Add to bag</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-art trunk-bg">
+              <span class="product-tag">Made to move</span>
+              <svg viewBox="0 0 220 230" aria-label="Navy men's boxer briefs illustration" role="img">
+                <path d="M55 35h110l-6 150h-45l-9-69-9 69H51L55 35Z" fill="#303e50"/>
+                <path d="M55 35h110v34H54l1-34Z" fill="#d2d7c9"/>
+                <path d="M57 69h106" stroke="#aab5a8" stroke-width="3"/>
+                <path d="M105 79v41" stroke="#536174" stroke-width="2"/>
+                <path d="M71 111h30m18 0h30" stroke="#435167" stroke-width="2" opacity=".65"/>
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-title-row">
+                <h3>Everyday Boxer Brief</h3>
+                <span class="price">$22</span>
+              </div>
+              <p>Stretch cotton · Deep navy</p>
+              <button class="add-button" type="button" data-product="Everyday Boxer Brief">Add to bag</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-art short-bg">
+              <span class="product-tag">Weekend pick</span>
+              <svg viewBox="0 0 220 230" aria-label="Olive lounge shorts illustration" role="img">
+                <path d="M49 43h122l-8 144h-51l-4-84-9 84H49L49 43Z" fill="#8b765b"/>
+                <path d="M49 43h122v32H49V43Z" fill="#d8d0bd"/>
+                <path d="M109 75v29" stroke="#b3a58d" stroke-width="3"/>
+                <path d="M75 46v18m70-18v18" stroke="#a1947d" stroke-width="2"/>
+                <path d="M60 112h34m30 0h34" stroke="#a18b6d" stroke-width="2" opacity=".55"/>
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-title-row">
+                <h3>Easy Lounge Short</h3>
+                <span class="price">$34</span>
+              </div>
+              <p>Relaxed fit · Warm olive</p>
+              <button class="add-button" type="button" data-product="Easy Lounge Short">Add to bag</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+    <section class="story-section" id="story" aria-labelledby="story-title">
+      <div class="wrap">
+        <div class="story-panel">
+          <div class="story-copy">
+            <p class="eyebrow">A little more comfortable</p>
+            <h2 id="story-title">The pieces you reach for, day after day.</h2>
+            <p>We believe a great wardrobe starts with a few dependable essentials: thoughtful fits, comfortable fabrics, and styles that feel like you.</p>
+            <a class="button" href="#shop">Find your everyday <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="story-quote">
+            <span aria-hidden="true">“</span>
+            <p>Good comfort doesn't ask for attention. It just makes everything feel a little easier.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
         <div class="contact-panel">
           <div class="contact-intro">
-            <p class="eyebrow">సంప్రదించండి</p>
-            <h2 id="contact-title">మీ మాట కోసం ఎదురుచూస్తున్నాం.</h2>
-            <p>మీ ఆలోచన, సూచన లేదా ప్రశ్నను మాతో పంచుకోండి. మీ నుంచి వచ్చే ప్రతి సందేశం మాకు విలువైనదే.</p>
+            <p class="eyebrow">Get in touch</p>
+            <h2 id="contact-title">We're here to help.</h2>
+            <p>Questions about a style, fit, or this little demo? Send us a note and we'll be happy to hear from you.</p>
           </div>
           <form class="contact-form" id="contact-form">
             <div class="field">
-              <label for="name">మీ పేరు</label>
-              <input id="name" name="name" type="text" autocomplete="name" placeholder="మీ పేరు" required>
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Alex Morgan" required>
             </div>
             <div class="field">
-              <label for="email">మీ ఇమెయిల్</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="మీకు సమాధానం పంపడానికి" required>
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="alex@example.com" required>
             </div>
             <div class="field">
-              <label for="message">మీ సందేశం</label>
-              <textarea id="message" name="message" placeholder="ఏం చెప్పాలనుకుంటున్నారు?" required></textarea>
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
             </div>
-            <p class="form-footnote">పంపినప్పుడు మీ పరికరంలోని ఇమెయిల్ యాప్‌లో సందేశం సిద్ధమవుతుంది.</p>
-            <button class="button" type="submit">సందేశం పంపండి <span aria-hidden="true">↗</span></button>
+            <button class="button" type="submit">Send a message <span class="arrow" aria-hidden="true">↗</span></button>
             <p class="status" id="form-status" aria-live="polite"></p>
           </form>
         </div>
@@ -518,28 +761,38 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">మ</span><span>మన మాట</span></a>
-      <p>తెలుగు మనసులతో, మనస్ఫూర్తిగా. <span aria-hidden="true">♥</span></p>
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">J's</span><span>Jockey's</span></a>
+      <p>Made for every day. <span aria-hidden="true">♥</span> &nbsp;Demo storefront</p>
     </div>
   </footer>
 
   <script>
+    let bagCount = 0;
+    const bagCountElement = document.getElementById("bag-count");
+    const bagLink = document.querySelector(".nav-cta");
+
+    document.querySelectorAll(".add-button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        bagCount += 1;
+        bagCountElement.textContent = bagCount;
+        bagLink.setAttribute("aria-label", "Shopping bag, " + bagCount + (bagCount === 1 ? " item" : " items"));
+
+        const originalText = button.textContent;
+        button.textContent = "Added to bag ✓";
+        window.setTimeout(function () {
+          button.textContent = originalText;
+        }, 1400);
+      });
+    });
+
     document.getElementById("contact-form").addEventListener("submit", function (event) {
       event.preventDefault();
-
       if (!this.reportValidity()) return;
 
       const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-      const subject = encodeURIComponent("మన మాటకు సందేశం — " + name);
-      const body = encodeURIComponent(
-        "పేరు: " + name + "\nఇమెయిల్: " + email + "\n\nసందేశం:\n" + message
-      );
-
       document.getElementById("form-status").textContent =
-        "మీ ఇమెయిల్ యాప్‌లో సందేశం తెరుచుకుంటుంది.";
-      window.location.href = "mailto:hello@example.com?subject=" + subject + "&body=" + body;
+        "Thanks, " + name + " — this demo form isn't connected yet.";
+      this.reset();
     });
   </script>
 </body>
